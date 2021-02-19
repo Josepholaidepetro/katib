@@ -97,7 +97,7 @@ def main():
 
     # We cannot set `steps_per_epoch = None` with MirroredStrategy
     # See: https://github.com/tensorflow/tensorflow/issues/25254
-    model.fit(train_datasets_sharded, epochs=5, steps_per_epoch=10)
+    model.fit(train_datasets_sharded, epochs=10, steps_per_epoch=10)
     eval_loss, eval_acc = model.evaluate(test_dataset_sharded, verbose=0, steps=10)
 
     # Log metrics for Katib
