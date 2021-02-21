@@ -17,13 +17,13 @@ spec:
     - name: --learning-rate
       parameterType: double
       feasibleSpace:
-        min: "0.3"
-        max: "0.4"
+        min: "0.2"
+        max: "0.5"
     - name: --momentum
       parameterType: double
       feasibleSpace:
-        min: "0.6"
-        max: "0.7"
+        min: "0.5"
+        max: "0.8"
   trialTemplate:
     goTemplate:
         rawTemplate: |-
