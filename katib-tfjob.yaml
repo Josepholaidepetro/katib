@@ -1,7 +1,7 @@
 apiVersion: "kubeflow.org/v1alpha3"
 kind: Experiment
 metadata:
-  name: adminjoseph
+  name: kubeflow-josepholaide10
 spec:
   parallelTrialCount: 3
   maxTrialCount: 12
