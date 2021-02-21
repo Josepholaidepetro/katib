@@ -7,7 +7,7 @@ import tensorflow_datasets as tfds
 logging.getLogger().setLevel(logging.INFO)
 
 
-def get_datasets(buffer_size):
+def make_datasets(buffer_size):
     datasets, ds_info = tfds.load(name="mnist", with_info=True, as_supervised=True)
     mnist_train, mnist_test = datasets["train"], datasets["test"]
 
@@ -24,7 +24,7 @@ def get_datasets(buffer_size):
 def compile_model(args):
     model = tf.keras.Sequential(
         [
-            tf.keras.layers.Conv2D(32, 3, activation="relu", input_shape=(28, 28, 1)),
+            tf.keras.layers.Conv2D(64, 3, activation="relu", input_shape=(28, 28, 1)),
             tf.keras.layers.MaxPooling2D(),
             tf.keras.layers.Flatten(),
             tf.keras.layers.Dense(64, activation="relu"),
@@ -79,7 +79,7 @@ def main():
     global_batch_size = args.batch_size * strategy.num_replicas_in_sync
 
     # Datasets need to be created after instantiation of `MultiWorkerMirroredStrategy`
-    train_dataset, test_dataset = get_datasets(buffer_size=args.buffer_size)
+    train_dataset, test_dataset = make_datasets(buffer_size=args.buffer_size)
     train_dataset = train_dataset.batch(batch_size=global_batch_size)
     test_dataset = test_dataset.batch(batch_size=global_batch_size)
 
