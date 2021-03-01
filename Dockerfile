@@ -1,5 +1,5 @@
 FROM tensorflow/tensorflow:2.3.0
 RUN pip install tensorflow_datasets
-ADD mnist.py /
+ADD fmnist.py /
  
-ENTRYPOINT ["python", "-u", "/mnist.py"]
+ENTRYPOINT ["python", "-u", "/fmnist.py"]
