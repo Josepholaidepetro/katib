@@ -14,7 +14,7 @@ Usage:
 1. Add the persistent volume and claim: `kubectl apply -f tfevent-volume/.`
 2. Deploy the TFJob: `kubectl apply -f katib-tfjob.yaml`
 OR
-3. https://raw.githubusercontent.com/<github-repository>/katib-tfjob.yaml
+3. `kubectl create -f https://raw.githubusercontent.com/Josepholaidepetro/katib/main/katib-tfjob.yaml`
 4. To get Katib experiment status `kubectl -n <user-namespace=kubeflow-josepholaide10> get experiment <YAML_file_config_name=mavencode> -o yaml`
 5. To get  Katib experiment trial status `kubectl -n <user-namespace=kubeflow-josepholaide10> get trials>`
 
