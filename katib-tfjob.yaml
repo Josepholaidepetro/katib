@@ -2,7 +2,7 @@ apiVersion: "kubeflow.org/v1alpha3"
 kind: Experiment
 metadata:
   name: mavencode
-  namespace: josephadmin
+  namespace: demo01
 spec:
   parallelTrialCount: 3
   maxTrialCount: 12
