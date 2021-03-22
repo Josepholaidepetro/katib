@@ -1,8 +1,8 @@
 apiVersion: "kubeflow.org/v1alpha3"
 kind: Experiment
 metadata:
-  name: mavencode
-  namespace: demo01
+  name: katib-tfjob-experiment2
+  namespace: kubeflow-josepholaide10
 spec:
   parallelTrialCount: 3
   maxTrialCount: 12
